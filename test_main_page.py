@@ -1,3 +1,5 @@
+import time
+
 import pytest
 
 from .pages.main_page import MainPage
@@ -19,3 +21,20 @@ def test_mytest(browser):
     page.go_to_login_page()
     login_page = LoginPage(browser, browser.current_url)
     login_page.should_be_login_page()
+
+
+def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
+    link = 'http://selenium1py.pythonanywhere.com/'
+    page = MainPage(browser, link)
+    page.open()
+    page.click_show_basket()
+    assert page.check_message_empty_basket(), 'The basket is not empty'
+
+
+def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
+    link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
+    page = MainPage(browser, link)
+    page.open()
+    page.click_show_basket()
+    time.sleep(10)
+    assert page.check_message_empty_basket(), 'The basket is not empty'
