@@ -19,4 +19,7 @@ class ProductPageLocators:
     CURRENT_PRICE = (By.CSS_SELECTOR, '.table-striped tr:nth-child(4) td')
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, '.alert-success:nth-child(1) .alertinner strong')
 
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
 
