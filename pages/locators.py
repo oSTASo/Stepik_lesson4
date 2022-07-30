@@ -17,5 +17,6 @@ class ProductPageLocators:
     BTN_BASKET = (By.CSS_SELECTOR, '.basket-mini a')
     CURRENT_NAME = (By.CSS_SELECTOR, '.alertinner strong')
     CURRENT_PRICE = (By.CSS_SELECTOR, '.table-striped tr:nth-child(4) td')
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, '.alert-success:nth-child(1) .alertinner strong')
 
 
