@@ -59,6 +59,9 @@ class BasePage:
         except NoAlertPresentException:
             print("No second alert presented")
 
+    def click_show_basket(self):
+        self.browser.find_element(*BasePageLocators.SHOW_BASKET).click()
+
     def open(self):
         self.browser.get(self.url)
 
